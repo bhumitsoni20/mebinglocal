@@ -1,8 +1,4 @@
 <div align="center">
-  <br />
-  <img src="frontend/public/demo.webp" alt="MebingLocal Demo" width="800" style="border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);"/>
-  <br /><br />
-  
   <h1>📍 MebingLocal</h1>
   <p><b>Your Next Adventure Starts Here. Find verified local companions, discover hidden gems, and experience cities authentically.</b></p>
   
