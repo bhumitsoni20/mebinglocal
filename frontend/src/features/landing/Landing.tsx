@@ -50,7 +50,7 @@ export function Landing() {
             <MapPin size={18} color="#fff" strokeWidth={2.5} />
           </div>
           <span style={{ fontSize: 18, fontWeight: 800, color: "#111827", letterSpacing: "-0.02em" }}>
-            Local<span style={{ color: "#FF6B35" }}>Friend</span>
+            Mebing<span style={{ color: "#FF6B35" }}>Local</span>
           </span>
         </div>
         <div className="flex items-center gap-3">
@@ -362,7 +362,7 @@ export function Landing() {
               <MapPin size={16} color="#fff" strokeWidth={2.5} />
             </div>
             <span style={{ fontSize: 16, fontWeight: 800, color: "#fff" }}>
-              Local<span style={{ color: "#FF6B35" }}>Friend</span>
+              Mebing<span style={{ color: "#FF6B35" }}>Local</span>
             </span>
           </div>
           <div className="flex gap-8" style={{ fontSize: 14 }}>

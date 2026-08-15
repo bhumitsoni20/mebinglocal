@@ -35,7 +35,7 @@ MebingLocal is a modern, full-stack application that connects travelers with ver
 
 ### Backend (NestJS API)
 - **Framework:** [NestJS](https://nestjs.com/)
-- **Database:** [PostgreSQL](https://www.postgresql.org/) + [Prisma ORM](https://www.prisma.io/)
+- **Database:** [Supabase PostgreSQL](https://supabase.com/) + [Prisma ORM](https://www.prisma.io/)
 - **Engine:** Fastify
 
 ## 🚀 Getting Started

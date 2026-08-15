@@ -58,7 +58,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
             <MapPin size={20} color="#fff" strokeWidth={2.5} />
           </div>
           <span style={{ fontSize: 20, fontWeight: 800, color: "#111827", letterSpacing: "-0.02em" }}>
-            Local<span style={{ color: "#FF6B35" }}>Friend</span>
+            Mebing<span style={{ color: "#FF6B35" }}>Local</span>
           </span>
         </div>
 

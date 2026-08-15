@@ -2,6 +2,19 @@
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
 </p>
 
+## Supabase PostgreSQL Configuration
+
+This project is configured to use **Supabase PostgreSQL** as the primary database via Prisma ORM.
+
+### Environment Variables
+
+Ensure your `.env` file contains the correct Supabase connection strings:
+- `DATABASE_URL`: Connection pooling string (Port `6543`, `pgbouncer=true` suffix)
+- `DIRECT_URL`: Direct connection string (Port `5432`) used by Prisma for migrations
+
+*Note: We only use Supabase for its managed PostgreSQL database. We do not use Supabase Auth, Storage, or Edge Functions.*
+
+
 [circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
 [circleci-url]: https://circleci.com/gh/nestjs/nest
 
