@@ -185,10 +185,10 @@ export function Discover() {
         <div className="flex-1 overflow-y-auto px-8 py-6" style={{ scrollbarWidth: "none" }}>
           <div className="grid gap-5" style={{ gridTemplateColumns: "repeat(3, 1fr)" }}>
             {filtered.map((lf) => (
-              <button
+              <div
                 key={lf.id}
                 onClick={() => router.push(`/app/profile/${lf.id}`)}
-                className="rounded-3xl overflow-hidden text-left w-full transition-all hover:-translate-y-1 hover:shadow-xl group"
+                className="rounded-3xl overflow-hidden text-left w-full transition-all hover:-translate-y-1 hover:shadow-xl group cursor-pointer"
                 style={{ background: "#fff", border: "1px solid #F1F5F9", boxShadow: "0 4px 20px rgba(0,0,0,0.05)" }}
               >
                 <div className="relative">
@@ -263,7 +263,7 @@ export function Discover() {
                     </button>
                   </div>
                 </div>
-              </button>
+              </div>
             ))}
           </div>
 
