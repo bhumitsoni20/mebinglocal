@@ -45,7 +45,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         className="flex flex-col h-full flex-shrink-0"
         style={{
           width: 260,
-          background: "#fff",
+          background: "#FCFAF5",
           borderRight: "1px solid var(--border)",
         }}
       >
@@ -53,18 +53,18 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <div className="flex items-center gap-3 px-6 py-6" style={{ borderBottom: "1px solid var(--border)" }}>
           <div
             className="rounded-xl flex items-center justify-center flex-shrink-0"
-            style={{ width: 40, height: 40, background: "linear-gradient(135deg, #FF6B35, #FF8C42)" }}
+            style={{ width: 40, height: 40, background: "linear-gradient(135deg, #C96F52, #D97A5E)" }}
           >
-            <MapPin size={20} color="#fff" strokeWidth={2.5} />
+            <MapPin size={20} color="#FCFAF5" strokeWidth={2.5} />
           </div>
-          <span style={{ fontSize: 20, fontWeight: 800, color: "#111827", letterSpacing: "-0.02em" }}>
-            Mebing<span style={{ color: "#FF6B35" }}>Local</span>
+          <span style={{ fontSize: 20, fontWeight: 800, color: "#1A3B2B", letterSpacing: "-0.02em" }}>
+            Mebing<span style={{ color: "#C96F52" }}>Local</span>
           </span>
         </div>
 
         {/* Search user */}
         <div className="px-4 py-4">
-          <div className="flex items-center gap-3 rounded-2xl px-4 py-2.5" style={{ background: "#F1F5F9" }}>
+          <div className="flex items-center gap-3 rounded-2xl px-4 py-2.5" style={{ background: "#F4E9D8" }}>
             <div
               className="rounded-full overflow-hidden flex-shrink-0"
               style={{ width: 34, height: 34 }}
@@ -76,14 +76,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
               />
             </div>
             <div className="flex-1 min-w-0">
-              <div style={{ fontSize: 13, fontWeight: 700, color: "#111827" }}>Jessica M.</div>
-              <div style={{ fontSize: 11, color: "#6B7280" }}>Solo Traveler</div>
+              <div style={{ fontSize: 13, fontWeight: 700, color: "#1A3B2B" }}>Jessica M.</div>
+              <div style={{ fontSize: 11, color: "#8B9E94" }}>Solo Traveler</div>
             </div>
             <div className="relative">
-              <Bell size={16} color="#6B7280" />
+              <Bell size={16} color="#8B9E94" />
               <span
                 className="absolute rounded-full"
-                style={{ width: 7, height: 7, background: "#FF6B35", top: -2, right: -2, border: "1.5px solid #F1F5F9" }}
+                style={{ width: 7, height: 7, background: "#C96F52", top: -2, right: -2, border: "1.5px solid #F4E9D8" }}
               />
             </div>
           </div>
@@ -91,7 +91,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
         {/* Main nav */}
         <nav className="flex-1 px-4 flex flex-col gap-1 overflow-y-auto">
-          <p style={{ fontSize: 10, fontWeight: 700, color: "#9CA3AF", letterSpacing: "0.08em", textTransform: "uppercase", padding: "8px 12px 4px" }}>
+          <p style={{ fontSize: 10, fontWeight: 700, color: "#8B9E94", letterSpacing: "0.08em", textTransform: "uppercase", padding: "8px 12px 4px" }}>
             Menu
           </p>
           {NAV_ITEMS.map(({ icon: Icon, label, path }) => {
@@ -102,8 +102,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 onClick={() => router.push(path)}
                 className="flex items-center gap-3 px-4 py-3 rounded-2xl text-left w-full transition-all group"
                 style={{
-                  background: active ? "#FFF3EE" : "transparent",
-                  color: active ? "#FF6B35" : "#374151",
+                  background: active ? "#FCFAF53EE" : "transparent",
+                  color: active ? "#C96F52" : "#2C4F3E",
                   fontWeight: active ? 700 : 500,
                   fontSize: 14,
                 }}
@@ -111,15 +111,15 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 <Icon
                   size={18}
                   strokeWidth={active ? 2.5 : 1.8}
-                  color={active ? "#FF6B35" : "#6B7280"}
+                  color={active ? "#C96F52" : "#8B9E94"}
                 />
                 {label}
-                {active && <ChevronRight size={14} color="#FF6B35" className="ml-auto" />}
+                {active && <ChevronRight size={14} color="#C96F52" className="ml-auto" />}
               </button>
             );
           })}
 
-          <p style={{ fontSize: 10, fontWeight: 700, color: "#9CA3AF", letterSpacing: "0.08em", textTransform: "uppercase", padding: "16px 12px 4px" }}>
+          <p style={{ fontSize: 10, fontWeight: 700, color: "#8B9E94", letterSpacing: "0.08em", textTransform: "uppercase", padding: "16px 12px 4px" }}>
             My Space
           </p>
           {[
@@ -134,13 +134,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 onClick={() => router.push(path)}
                 className="flex items-center gap-3 px-4 py-3 rounded-2xl text-left w-full transition-all"
                 style={{
-                  background: active ? "#FFF3EE" : "transparent",
-                  color: active ? "#FF6B35" : "#374151",
+                  background: active ? "#FCFAF53EE" : "transparent",
+                  color: active ? "#C96F52" : "#2C4F3E",
                   fontWeight: active ? 700 : 500,
                   fontSize: 14,
                 }}
               >
-                <Icon size={18} strokeWidth={1.8} color={active ? "#FF6B35" : "#6B7280"} />
+                <Icon size={18} strokeWidth={1.8} color={active ? "#C96F52" : "#8B9E94"} />
                 {label}
               </button>
             );
@@ -153,7 +153,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
             onClick={() => router.push("/app/safety")}
             className="w-full rounded-2xl p-4 flex items-center gap-3 transition-all"
             style={{
-              background: isActive("/app/safety") ? "#111827" : "linear-gradient(135deg, #111827, #1E293B)",
+              background: isActive("/app/safety") ? "#1A3B2B" : "linear-gradient(135deg, #1A3B2B, #1E293B)",
               boxShadow: "0 4px 20px rgba(17,24,39,0.2)",
             }}
           >
@@ -161,10 +161,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
               className="rounded-xl flex items-center justify-center flex-shrink-0"
               style={{ width: 36, height: 36, background: "rgba(255,255,255,0.12)" }}
             >
-              <Shield size={18} color="#fff" />
+              <Shield size={18} color="#FCFAF5" />
             </div>
             <div className="text-left">
-              <div style={{ fontSize: 13, fontWeight: 700, color: "#fff" }}>Safety Center</div>
+              <div style={{ fontSize: 13, fontWeight: 700, color: "#FCFAF5" }}>Safety Center</div>
               <div style={{ fontSize: 11, color: "rgba(255,255,255,0.6)" }}>SOS · Location · Contacts</div>
             </div>
           </button>

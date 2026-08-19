@@ -31,21 +31,21 @@ export function Booking() {
       <div className="flex items-center justify-center h-full" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", background: "#F8F9FE" }}>
         <div className="flex flex-col items-center text-center" style={{ maxWidth: 480 }}>
           <div className="rounded-full flex items-center justify-center mb-6" style={{ width: 120, height: 120, background: "#ECFDF5" }}>
-            <CheckCircle size={60} color="#0FB8B0" />
+            <CheckCircle size={60} color="#C96F52" />
           </div>
-          <h2 style={{ fontSize: 32, fontWeight: 800, color: "#111827", marginBottom: 12 }}>Booking Confirmed! 🎉</h2>
-          <p style={{ fontSize: 16, color: "#6B7280", lineHeight: 1.7, marginBottom: 12 }}>
-            Your adventure with <strong style={{ color: "#111827" }}>{lf.name}</strong> is booked for
+          <h2 style={{ fontSize: 32, fontWeight: 800, color: "#1A3B2B", marginBottom: 12 }}>Booking Confirmed! 🎉</h2>
+          <p style={{ fontSize: 16, color: "#8B9E94", lineHeight: 1.7, marginBottom: 12 }}>
+            Your adventure with <strong style={{ color: "#1A3B2B" }}>{lf.name}</strong> is booked for
           </p>
-          <div className="rounded-3xl px-8 py-5 mb-8" style={{ background: "#FFF3EE", border: "1px solid #FFD6C2" }}>
-            <div style={{ fontSize: 20, fontWeight: 800, color: "#FF6B35" }}>June {selectedDate}, 2025 · {selectedTime}</div>
-            <div style={{ fontSize: 15, color: "#6B7280", marginTop: 4 }}>{duration} hour{duration > 1 ? "s" : ""} · {lf.city}</div>
+          <div className="rounded-3xl px-8 py-5 mb-8" style={{ background: "#FCFAF53EE", border: "1px solid #FFD6C2" }}>
+            <div style={{ fontSize: 20, fontWeight: 800, color: "#C96F52" }}>June {selectedDate}, 2025 · {selectedTime}</div>
+            <div style={{ fontSize: 15, color: "#8B9E94", marginTop: 4 }}>{duration} hour{duration > 1 ? "s" : ""} · {lf.city}</div>
           </div>
           <div className="flex gap-4">
-            <button onClick={() => router.push("/app")} className="rounded-2xl px-8 py-4" style={{ background: "#FF6B35", color: "#fff", fontSize: 15, fontWeight: 700 }}>
+            <button onClick={() => router.push("/app")} className="rounded-2xl px-8 py-4" style={{ background: "#C96F52", color: "#FCFAF5", fontSize: 15, fontWeight: 700 }}>
               Back to Home
             </button>
-            <button onClick={() => router.push("/app/safety")} className="rounded-2xl px-8 py-4" style={{ background: "#F1F5F9", color: "#374151", fontSize: 15, fontWeight: 600 }}>
+            <button onClick={() => router.push("/app/safety")} className="rounded-2xl px-8 py-4" style={{ background: "#F4E9D8", color: "#2C4F3E", fontSize: 15, fontWeight: 600 }}>
               Safety Center
             </button>
           </div>
@@ -60,18 +60,18 @@ export function Booking() {
       {/* ── Left: Date & Time picker ── */}
       <div className="flex-1 overflow-y-auto px-10 py-8" style={{ scrollbarWidth: "none" }}>
         <div className="flex items-center gap-3 mb-8">
-          <button onClick={() => router.push(-1)} className="rounded-xl p-2.5 flex items-center gap-2" style={{ background: "#F1F5F9", fontSize: 14, fontWeight: 600, color: "#374151" }}>
+          <button onClick={() => router.push(-1)} className="rounded-xl p-2.5 flex items-center gap-2" style={{ background: "#F4E9D8", fontSize: 14, fontWeight: 600, color: "#2C4F3E" }}>
             <ArrowLeft size={16} />
           </button>
           <div>
-            <h1 style={{ fontSize: 26, fontWeight: 800, color: "#111827", letterSpacing: "-0.02em" }}>Book Your Experience</h1>
-            <p style={{ fontSize: 14, color: "#6B7280" }}>with {lf.name} in {lf.city}</p>
+            <h1 style={{ fontSize: 26, fontWeight: 800, color: "#1A3B2B", letterSpacing: "-0.02em" }}>Book Your Experience</h1>
+            <p style={{ fontSize: 14, color: "#8B9E94" }}>with {lf.name} in {lf.city}</p>
           </div>
         </div>
 
         {/* Date picker */}
         <div className="mb-8">
-          <h2 style={{ fontSize: 17, fontWeight: 800, color: "#111827", marginBottom: 16 }}>Select a Date</h2>
+          <h2 style={{ fontSize: 17, fontWeight: 800, color: "#1A3B2B", marginBottom: 16 }}>Select a Date</h2>
           <div className="flex gap-3 flex-wrap">
             {JUNE_DATES.map((d, i) => {
               const avail = AVAILABLE.includes(d);
@@ -83,9 +83,9 @@ export function Booking() {
                   onClick={() => setSelectedDate(d)}
                   className="rounded-2xl flex flex-col items-center py-4 px-5 transition-all"
                   style={{
-                    background: selected ? "#FF6B35" : avail ? "#fff" : "#F9FAFB",
-                    color: selected ? "#fff" : avail ? "#111827" : "#D1D5DB",
-                    border: selected ? "2px solid #FF6B35" : avail ? "1.5px solid #E5E7EB" : "1.5px solid #F1F5F9",
+                    background: selected ? "#C96F52" : avail ? "#FCFAF5" : "#F4E9D8",
+                    color: selected ? "#FCFAF5" : avail ? "#1A3B2B" : "#8B9E94",
+                    border: selected ? "2px solid #C96F52" : avail ? "1.5px solid #8B9E94" : "1.5px solid #F4E9D8",
                     boxShadow: selected ? "0 4px 16px rgba(255,107,53,0.3)" : "none",
                     minWidth: 70,
                   }}
@@ -102,7 +102,7 @@ export function Booking() {
         {/* Time */}
         {selectedDate && (
           <div className="mb-8">
-            <h2 style={{ fontSize: 17, fontWeight: 800, color: "#111827", marginBottom: 16 }}>Select a Time</h2>
+            <h2 style={{ fontSize: 17, fontWeight: 800, color: "#1A3B2B", marginBottom: 16 }}>Select a Time</h2>
             <div className="grid gap-3" style={{ gridTemplateColumns: "repeat(4, 1fr)" }}>
               {TIMES.map((t) => (
                 <button
@@ -112,9 +112,9 @@ export function Booking() {
                   style={{
                     fontSize: 14,
                     fontWeight: 600,
-                    background: selectedTime === t ? "#FF6B35" : "#fff",
-                    color: selectedTime === t ? "#fff" : "#374151",
-                    border: selectedTime === t ? "2px solid #FF6B35" : "1.5px solid #E5E7EB",
+                    background: selectedTime === t ? "#C96F52" : "#FCFAF5",
+                    color: selectedTime === t ? "#FCFAF5" : "#2C4F3E",
+                    border: selectedTime === t ? "2px solid #C96F52" : "1.5px solid #8B9E94",
                     boxShadow: selectedTime === t ? "0 4px 16px rgba(255,107,53,0.25)" : "none",
                   }}
                 >
@@ -128,8 +128,8 @@ export function Booking() {
         {/* Duration */}
         <div className="mb-8">
           <div className="flex items-center justify-between mb-4">
-            <h2 style={{ fontSize: 17, fontWeight: 800, color: "#111827" }}>How long?</h2>
-            <span style={{ fontSize: 14, fontWeight: 600, color: "#FF6B35" }}>{duration} hour{duration > 1 ? "s" : ""}</span>
+            <h2 style={{ fontSize: 17, fontWeight: 800, color: "#1A3B2B" }}>How long?</h2>
+            <span style={{ fontSize: 14, fontWeight: 600, color: "#C96F52" }}>{duration} hour{duration > 1 ? "s" : ""}</span>
           </div>
           <div className="grid gap-3" style={{ gridTemplateColumns: "repeat(6, 1fr)" }}>
             {DURATIONS.map((d) => (
@@ -138,9 +138,9 @@ export function Booking() {
                 onClick={() => setDuration(d)}
                 className="rounded-2xl py-4 flex flex-col items-center transition-all"
                 style={{
-                  background: duration === d ? "#111827" : "#fff",
-                  color: duration === d ? "#fff" : "#374151",
-                  border: duration === d ? "2px solid #111827" : "1.5px solid #E5E7EB",
+                  background: duration === d ? "#1A3B2B" : "#FCFAF5",
+                  color: duration === d ? "#FCFAF5" : "#2C4F3E",
+                  border: duration === d ? "2px solid #1A3B2B" : "1.5px solid #8B9E94",
                   fontSize: 18,
                   fontWeight: 800,
                 }}
@@ -156,19 +156,19 @@ export function Booking() {
       {/* ── Right: Summary ── */}
       <div
         className="flex-shrink-0 flex flex-col"
-        style={{ width: 360, borderLeft: "1px solid var(--border)", background: "#fff" }}
+        style={{ width: 360, borderLeft: "1px solid var(--border)", background: "#FCFAF5" }}
       >
         {/* Friend summary */}
         <div className="p-6" style={{ borderBottom: "1px solid var(--border)" }}>
           <div className="flex items-center gap-4">
             <img src={lf.avatar} alt={lf.name} className="rounded-2xl object-cover" style={{ width: 64, height: 64 }} />
             <div>
-              <div style={{ fontSize: 17, fontWeight: 800, color: "#111827" }}>{lf.name}</div>
-              <div style={{ fontSize: 13, color: "#6B7280" }}>📍 {lf.city}</div>
+              <div style={{ fontSize: 17, fontWeight: 800, color: "#1A3B2B" }}>{lf.name}</div>
+              <div style={{ fontSize: 13, color: "#8B9E94" }}>📍 {lf.city}</div>
               <div className="flex items-center gap-1 mt-0.5">
-                <Star size={13} color="#FF6B35" fill="#FF6B35" />
+                <Star size={13} color="#C96F52" fill="#C96F52" />
                 <span style={{ fontSize: 13, fontWeight: 700 }}>{lf.rating}</span>
-                <span style={{ fontSize: 12, color: "#9CA3AF" }}>({lf.reviewCount})</span>
+                <span style={{ fontSize: 12, color: "#8B9E94" }}>({lf.reviewCount})</span>
               </div>
             </div>
           </div>
@@ -176,32 +176,32 @@ export function Booking() {
 
         {/* Booking summary */}
         <div className="p-6 flex-1">
-          <h3 style={{ fontSize: 15, fontWeight: 800, color: "#111827", marginBottom: 16 }}>Booking Summary</h3>
+          <h3 style={{ fontSize: 15, fontWeight: 800, color: "#1A3B2B", marginBottom: 16 }}>Booking Summary</h3>
 
           {[
             { label: "Date", value: selectedDate ? `June ${selectedDate}, 2025` : "Not selected", empty: !selectedDate },
             { label: "Time", value: selectedTime ?? "Not selected", empty: !selectedTime },
             { label: "Duration", value: `${duration} hour${duration > 1 ? "s" : ""}`, empty: false },
           ].map((row) => (
-            <div key={row.label} className="flex justify-between py-3" style={{ borderBottom: "1px solid #F1F5F9" }}>
-              <span style={{ fontSize: 13, color: "#6B7280" }}>{row.label}</span>
-              <span style={{ fontSize: 13, fontWeight: 700, color: row.empty ? "#D1D5DB" : "#111827" }}>{row.value}</span>
+            <div key={row.label} className="flex justify-between py-3" style={{ borderBottom: "1px solid #F4E9D8" }}>
+              <span style={{ fontSize: 13, color: "#8B9E94" }}>{row.label}</span>
+              <span style={{ fontSize: 13, fontWeight: 700, color: row.empty ? "#8B9E94" : "#1A3B2B" }}>{row.value}</span>
             </div>
           ))}
 
           {/* Price */}
-          <div className="mt-4 rounded-2xl p-4" style={{ background: "#FAFAF8" }}>
+          <div className="mt-4 rounded-2xl p-4" style={{ background: "#F4E9D8" }}>
             <div className="flex justify-between mb-2">
-              <span style={{ fontSize: 13, color: "#6B7280" }}>${lf.hourlyRate} × {duration} hr{duration > 1 ? "s" : ""}</span>
-              <span style={{ fontSize: 13, color: "#374151" }}>${subtotal}</span>
+              <span style={{ fontSize: 13, color: "#8B9E94" }}>${lf.hourlyRate} × {duration} hr{duration > 1 ? "s" : ""}</span>
+              <span style={{ fontSize: 13, color: "#2C4F3E" }}>${subtotal}</span>
             </div>
             <div className="flex justify-between mb-3">
-              <span style={{ fontSize: 13, color: "#6B7280" }}>Service fee (12%)</span>
-              <span style={{ fontSize: 13, color: "#374151" }}>${serviceFee}</span>
+              <span style={{ fontSize: 13, color: "#8B9E94" }}>Service fee (12%)</span>
+              <span style={{ fontSize: 13, color: "#2C4F3E" }}>${serviceFee}</span>
             </div>
-            <div className="flex justify-between pt-3" style={{ borderTop: "1px solid #E5E7EB" }}>
-              <span style={{ fontSize: 15, fontWeight: 800, color: "#111827" }}>Total</span>
-              <span style={{ fontSize: 18, fontWeight: 800, color: "#FF6B35" }}>${total}</span>
+            <div className="flex justify-between pt-3" style={{ borderTop: "1px solid #8B9E94" }}>
+              <span style={{ fontSize: 15, fontWeight: 800, color: "#1A3B2B" }}>Total</span>
+              <span style={{ fontSize: 18, fontWeight: 800, color: "#C96F52" }}>${total}</span>
             </div>
           </div>
 
@@ -209,8 +209,8 @@ export function Booking() {
           <div className="rounded-2xl p-4 flex items-center gap-3 mt-4" style={{ background: "#EFF6FF", border: "1px solid #BFDBFE" }}>
             <CreditCard size={20} color="#3B82F6" />
             <div className="flex-1">
-              <div style={{ fontSize: 13, fontWeight: 600, color: "#374151" }}>Visa ending in 4242</div>
-              <div style={{ fontSize: 12, color: "#6B7280" }}>Default payment method</div>
+              <div style={{ fontSize: 13, fontWeight: 600, color: "#2C4F3E" }}>Visa ending in 4242</div>
+              <div style={{ fontSize: 12, color: "#8B9E94" }}>Default payment method</div>
             </div>
             <button style={{ fontSize: 13, fontWeight: 600, color: "#3B82F6" }}>Edit</button>
           </div>
@@ -229,8 +229,8 @@ export function Booking() {
             onClick={() => selectedDate && selectedTime && setConfirmed(true)}
             className="w-full rounded-2xl py-4 transition-all"
             style={{
-              background: selectedDate && selectedTime ? "#FF6B35" : "#E5E7EB",
-              color: selectedDate && selectedTime ? "#fff" : "#9CA3AF",
+              background: selectedDate && selectedTime ? "#C96F52" : "#8B9E94",
+              color: selectedDate && selectedTime ? "#FCFAF5" : "#8B9E94",
               fontSize: 16,
               fontWeight: 700,
               boxShadow: selectedDate && selectedTime ? "0 4px 20px rgba(255,107,53,0.3)" : "none",

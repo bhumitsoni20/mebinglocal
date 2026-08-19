@@ -34,29 +34,29 @@ export function Discover() {
       {/* ── Filter Sidebar ── */}
       <aside
         className="flex-shrink-0 flex flex-col overflow-y-auto"
-        style={{ width: 280, borderRight: "1px solid var(--border)", background: "#fff", scrollbarWidth: "none" }}
+        style={{ width: 280, borderRight: "1px solid var(--border)", background: "#FCFAF5", scrollbarWidth: "none" }}
       >
         <div className="px-6 py-6">
           <div className="flex items-center gap-2 mb-6">
-            <SlidersHorizontal size={18} color="#374151" />
-            <h2 style={{ fontSize: 16, fontWeight: 800, color: "#111827" }}>Filters</h2>
+            <SlidersHorizontal size={18} color="#2C4F3E" />
+            <h2 style={{ fontSize: 16, fontWeight: 800, color: "#1A3B2B" }}>Filters</h2>
           </div>
 
           {/* Women-only toggle */}
           <div className="mb-6">
             <div className="flex items-center justify-between">
               <div>
-                <div style={{ fontSize: 13, fontWeight: 700, color: "#374151" }}>Women-Only 💜</div>
-                <div style={{ fontSize: 11, color: "#9CA3AF" }}>Female companions only</div>
+                <div style={{ fontSize: 13, fontWeight: 700, color: "#2C4F3E" }}>Women-Only 💜</div>
+                <div style={{ fontSize: 11, color: "#8B9E94" }}>Female companions only</div>
               </div>
               <button
                 onClick={() => setWomenOnly(!womenOnly)}
                 className="rounded-full transition-colors"
-                style={{ width: 44, height: 24, background: womenOnly ? "#EC4899" : "#D1D5DB", position: "relative" }}
+                style={{ width: 44, height: 24, background: womenOnly ? "#EC4899" : "#8B9E94", position: "relative" }}
               >
                 <span
                   className="absolute rounded-full"
-                  style={{ width: 18, height: 18, background: "#fff", top: 3, left: womenOnly ? 23 : 3, transition: "left 0.2s", boxShadow: "0 1px 3px rgba(0,0,0,0.2)" }}
+                  style={{ width: 18, height: 18, background: "#FCFAF5", top: 3, left: womenOnly ? 23 : 3, transition: "left 0.2s", boxShadow: "0 1px 3px rgba(0,0,0,0.2)" }}
                 />
               </button>
             </div>
@@ -65,19 +65,19 @@ export function Discover() {
           {/* Price range */}
           <div className="mb-6">
             <div className="flex justify-between mb-3">
-              <span style={{ fontSize: 13, fontWeight: 700, color: "#374151" }}>Max Price / hr</span>
-              <span style={{ fontSize: 13, fontWeight: 800, color: "#FF6B35" }}>${maxRate}</span>
+              <span style={{ fontSize: 13, fontWeight: 700, color: "#2C4F3E" }}>Max Price / hr</span>
+              <span style={{ fontSize: 13, fontWeight: 800, color: "#C96F52" }}>${maxRate}</span>
             </div>
-            <input type="range" min={5} max={60} value={maxRate} onChange={(e) => setMaxRate(Number(e.target.value))} className="w-full" style={{ accentColor: "#FF6B35" }} />
+            <input type="range" min={5} max={60} value={maxRate} onChange={(e) => setMaxRate(Number(e.target.value))} className="w-full" style={{ accentColor: "#C96F52" }} />
             <div className="flex justify-between mt-1">
-              <span style={{ fontSize: 11, color: "#9CA3AF" }}>$5</span>
-              <span style={{ fontSize: 11, color: "#9CA3AF" }}>$60</span>
+              <span style={{ fontSize: 11, color: "#8B9E94" }}>$5</span>
+              <span style={{ fontSize: 11, color: "#8B9E94" }}>$60</span>
             </div>
           </div>
 
           {/* Min rating */}
           <div className="mb-6">
-            <span style={{ fontSize: 13, fontWeight: 700, color: "#374151", display: "block", marginBottom: 10 }}>Minimum Rating</span>
+            <span style={{ fontSize: 13, fontWeight: 700, color: "#2C4F3E", display: "block", marginBottom: 10 }}>Minimum Rating</span>
             <div className="flex gap-2">
               {[0, 4.5, 4.8, 4.9].map((r) => (
                 <button
@@ -86,12 +86,12 @@ export function Discover() {
                   className="flex-1 rounded-xl py-2 flex items-center justify-center gap-1"
                   style={{
                     fontSize: 12, fontWeight: 600,
-                    background: minRating === r ? "#FFF3EE" : "#F1F5F9",
-                    color: minRating === r ? "#FF6B35" : "#6B7280",
-                    border: minRating === r ? "1.5px solid #FF6B35" : "1.5px solid transparent",
+                    background: minRating === r ? "#FCFAF53EE" : "#F4E9D8",
+                    color: minRating === r ? "#C96F52" : "#8B9E94",
+                    border: minRating === r ? "1.5px solid #C96F52" : "1.5px solid transparent",
                   }}
                 >
-                  {r === 0 ? "Any" : <><Star size={10} fill="#FF6B35" color="#FF6B35" /> {r}</>}
+                  {r === 0 ? "Any" : <><Star size={10} fill="#C96F52" color="#C96F52" /> {r}</>}
                 </button>
               ))}
             </div>
@@ -99,7 +99,7 @@ export function Discover() {
 
           {/* Language */}
           <div className="mb-6">
-            <span style={{ fontSize: 13, fontWeight: 700, color: "#374151", display: "block", marginBottom: 10 }}>Language</span>
+            <span style={{ fontSize: 13, fontWeight: 700, color: "#2C4F3E", display: "block", marginBottom: 10 }}>Language</span>
             <div className="flex flex-col gap-1.5">
               {LANGUAGES.map((l) => (
                 <button
@@ -108,14 +108,14 @@ export function Discover() {
                   className="flex items-center gap-2 rounded-xl px-3 py-2 text-left"
                   style={{
                     fontSize: 13,
-                    background: selectedLang === l ? "#FFF3EE" : "transparent",
-                    color: selectedLang === l ? "#FF6B35" : "#374151",
+                    background: selectedLang === l ? "#FCFAF53EE" : "transparent",
+                    color: selectedLang === l ? "#C96F52" : "#2C4F3E",
                     fontWeight: selectedLang === l ? 700 : 400,
                   }}
                 >
                   <span
                     className="rounded-full flex-shrink-0"
-                    style={{ width: 16, height: 16, border: `2px solid ${selectedLang === l ? "#FF6B35" : "#D1D5DB"}`, background: selectedLang === l ? "#FF6B35" : "transparent" }}
+                    style={{ width: 16, height: 16, border: `2px solid ${selectedLang === l ? "#C96F52" : "#8B9E94"}`, background: selectedLang === l ? "#C96F52" : "transparent" }}
                   />
                   {l}
                 </button>
@@ -125,7 +125,7 @@ export function Discover() {
 
           {/* Interests */}
           <div>
-            <span style={{ fontSize: 13, fontWeight: 700, color: "#374151", display: "block", marginBottom: 10 }}>Interests</span>
+            <span style={{ fontSize: 13, fontWeight: 700, color: "#2C4F3E", display: "block", marginBottom: 10 }}>Interests</span>
             <div className="flex gap-2 flex-wrap">
               {INTERESTS.map((i) => (
                 <button
@@ -134,8 +134,8 @@ export function Discover() {
                   className="rounded-full px-3 py-1.5"
                   style={{
                     fontSize: 12, fontWeight: 600,
-                    background: selectedInterest === i ? "#0FB8B0" : "#F1F5F9",
-                    color: selectedInterest === i ? "#fff" : "#374151",
+                    background: selectedInterest === i ? "#C96F52" : "#F4E9D8",
+                    color: selectedInterest === i ? "#FCFAF5" : "#2C4F3E",
                   }}
                 >
                   {i}
@@ -149,25 +149,25 @@ export function Discover() {
       {/* ── Results area ── */}
       <div className="flex-1 flex flex-col overflow-hidden">
         {/* Top bar */}
-        <div className="flex items-center gap-4 px-8 py-5" style={{ borderBottom: "1px solid var(--border)", background: "#fff" }}>
-          <div className="flex-1 flex items-center gap-3 rounded-2xl px-5 py-3" style={{ background: "#F1F5F9" }}>
-            <Search size={18} color="#6B7280" />
+        <div className="flex items-center gap-4 px-8 py-5" style={{ borderBottom: "1px solid var(--border)", background: "#FCFAF5" }}>
+          <div className="flex-1 flex items-center gap-3 rounded-2xl px-5 py-3" style={{ background: "#F4E9D8" }}>
+            <Search size={18} color="#8B9E94" />
             <input
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search by city or name…"
               className="bg-transparent outline-none flex-1"
-              style={{ fontSize: 14, color: "#111827", border: "none" }}
+              style={{ fontSize: 14, color: "#1A3B2B", border: "none" }}
             />
           </div>
 
           <div className="flex items-center gap-2">
-            <span style={{ fontSize: 13, color: "#6B7280" }}>Sort:</span>
+            <span style={{ fontSize: 13, color: "#8B9E94" }}>Sort:</span>
             <select
               value={sort}
               onChange={(e) => setSort(e.target.value)}
               className="rounded-xl px-3 py-2 outline-none"
-              style={{ fontSize: 13, fontWeight: 600, background: "#F1F5F9", border: "none", color: "#374151", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+              style={{ fontSize: 13, fontWeight: 600, background: "#F4E9D8", border: "none", color: "#2C4F3E", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
             >
               {SORT_OPTIONS.map((o) => <option key={o}>{o}</option>)}
             </select>
@@ -175,7 +175,7 @@ export function Discover() {
 
           <div
             className="rounded-full px-4 py-1.5"
-            style={{ fontSize: 13, fontWeight: 700, background: "#FFF3EE", color: "#FF6B35" }}
+            style={{ fontSize: 13, fontWeight: 700, background: "#FCFAF53EE", color: "#C96F52" }}
           >
             {filtered.length} found
           </div>
@@ -189,19 +189,19 @@ export function Discover() {
                 key={lf.id}
                 onClick={() => router.push(`/app/profile/${lf.id}`)}
                 className="rounded-3xl overflow-hidden text-left w-full transition-all hover:-translate-y-1 hover:shadow-xl group cursor-pointer"
-                style={{ background: "#fff", border: "1px solid #F1F5F9", boxShadow: "0 4px 20px rgba(0,0,0,0.05)" }}
+                style={{ background: "#FCFAF5", border: "1px solid #F4E9D8", boxShadow: "0 4px 20px rgba(0,0,0,0.05)" }}
               >
                 <div className="relative">
                   <img src={lf.coverPhoto} alt={lf.city} className="w-full object-cover" style={{ height: 160 }} />
                   <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.55), transparent)" }} />
                   <div className="absolute top-3 left-3 flex gap-1.5">
                     {lf.womenOnly && (
-                      <span className="rounded-full px-2.5 py-1" style={{ fontSize: 10, fontWeight: 700, background: "#8B5CF6", color: "#fff" }}>
+                      <span className="rounded-full px-2.5 py-1" style={{ fontSize: 10, fontWeight: 700, background: "#C96F52", color: "#FCFAF5" }}>
                         Women-Only
                       </span>
                     )}
                     {lf.verified && (
-                      <span className="rounded-full px-2.5 py-1" style={{ fontSize: 10, fontWeight: 700, background: "#0FB8B0", color: "#fff" }}>
+                      <span className="rounded-full px-2.5 py-1" style={{ fontSize: 10, fontWeight: 700, background: "#C96F52", color: "#FCFAF5" }}>
                         ✓ Verified
                       </span>
                     )}
@@ -210,37 +210,37 @@ export function Discover() {
                     src={lf.avatar}
                     alt={lf.name}
                     className="absolute rounded-2xl object-cover"
-                    style={{ width: 50, height: 50, bottom: -18, left: 18, border: "3px solid #fff" }}
+                    style={{ width: 50, height: 50, bottom: -18, left: 18, border: "3px solid #FCFAF5" }}
                   />
                 </div>
 
                 <div className="px-5 pt-7 pb-5">
                   <div className="flex items-start justify-between mb-1">
                     <div>
-                      <div style={{ fontSize: 16, fontWeight: 700, color: "#111827" }}>{lf.name}, {lf.age}</div>
-                      <div className="flex items-center gap-1" style={{ fontSize: 12, color: "#6B7280" }}>
+                      <div style={{ fontSize: 16, fontWeight: 700, color: "#1A3B2B" }}>{lf.name}, {lf.age}</div>
+                      <div className="flex items-center gap-1" style={{ fontSize: 12, color: "#8B9E94" }}>
                         <MapPin size={11} /> {lf.city}, {lf.country}
                       </div>
                     </div>
-                    <div style={{ fontSize: 18, fontWeight: 800, color: "#111827" }}>
-                      ${lf.hourlyRate}<span style={{ fontSize: 11, fontWeight: 400, color: "#9CA3AF" }}>/hr</span>
+                    <div style={{ fontSize: 18, fontWeight: 800, color: "#1A3B2B" }}>
+                      ${lf.hourlyRate}<span style={{ fontSize: 11, fontWeight: 400, color: "#8B9E94" }}>/hr</span>
                     </div>
                   </div>
 
                   <div className="flex items-center gap-1.5 mt-1">
-                    <Star size={13} color="#FF6B35" fill="#FF6B35" />
-                    <span style={{ fontSize: 13, fontWeight: 700, color: "#374151" }}>{lf.rating}</span>
-                    <span style={{ fontSize: 12, color: "#9CA3AF" }}>({lf.reviewCount} reviews)</span>
-                    <span style={{ fontSize: 12, color: "#9CA3AF", marginLeft: "auto" }}>⏱ {lf.responseTime}</span>
+                    <Star size={13} color="#C96F52" fill="#C96F52" />
+                    <span style={{ fontSize: 13, fontWeight: 700, color: "#2C4F3E" }}>{lf.rating}</span>
+                    <span style={{ fontSize: 12, color: "#8B9E94" }}>({lf.reviewCount} reviews)</span>
+                    <span style={{ fontSize: 12, color: "#8B9E94", marginLeft: "auto" }}>⏱ {lf.responseTime}</span>
                   </div>
 
-                  <p style={{ fontSize: 13, color: "#6B7280", lineHeight: 1.6, marginTop: 8 }}>
+                  <p style={{ fontSize: 13, color: "#8B9E94", lineHeight: 1.6, marginTop: 8 }}>
                     {lf.bio.slice(0, 90)}…
                   </p>
 
                   <div className="flex gap-1.5 mt-3 flex-wrap">
                     {lf.interests.slice(0, 3).map((i) => (
-                      <span key={i} className="rounded-full px-2.5 py-1" style={{ fontSize: 11, background: "#FFF3EE", color: "#FF6B35", fontWeight: 600 }}>
+                      <span key={i} className="rounded-full px-2.5 py-1" style={{ fontSize: 11, background: "#FCFAF53EE", color: "#C96F52", fontWeight: 600 }}>
                         {i}
                       </span>
                     ))}
@@ -250,14 +250,14 @@ export function Discover() {
                     <button
                       onClick={(e) => { e.stopPropagation(); router.push(`/app/profile/${lf.id}`); }}
                       className="flex-1 rounded-xl py-2.5"
-                      style={{ fontSize: 13, fontWeight: 600, background: "#F1F5F9", color: "#374151" }}
+                      style={{ fontSize: 13, fontWeight: 600, background: "#F4E9D8", color: "#2C4F3E" }}
                     >
                       View Profile
                     </button>
                     <button
                       onClick={(e) => { e.stopPropagation(); router.push(`/app/booking/${lf.id}`); }}
                       className="flex-1 rounded-xl py-2.5"
-                      style={{ fontSize: 13, fontWeight: 700, background: "#FF6B35", color: "#fff" }}
+                      style={{ fontSize: 13, fontWeight: 700, background: "#C96F52", color: "#FCFAF5" }}
                     >
                       Book Now
                     </button>
@@ -270,8 +270,8 @@ export function Discover() {
           {filtered.length === 0 && (
             <div className="flex flex-col items-center justify-center py-20">
               <div className="text-5xl mb-4">🔍</div>
-              <div style={{ fontSize: 18, fontWeight: 700, color: "#111827" }}>No Companions found</div>
-              <div style={{ fontSize: 14, color: "#6B7280", marginTop: 6 }}>Try adjusting your filters</div>
+              <div style={{ fontSize: 18, fontWeight: 700, color: "#1A3B2B" }}>No Companions found</div>
+              <div style={{ fontSize: 14, color: "#8B9E94", marginTop: 6 }}>Try adjusting your filters</div>
             </div>
           )}
         </div>

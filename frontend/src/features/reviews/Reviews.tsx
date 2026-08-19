@@ -24,11 +24,11 @@ const ALL_REVIEWS = [
 function RatingBar({ label, value }: { label: string; value: number }) {
   return (
     <div className="flex items-center gap-4">
-      <span style={{ fontSize: 13, color: "#6B7280", width: 100, flexShrink: 0 }}>{label}</span>
-      <div className="flex-1 rounded-full overflow-hidden" style={{ height: 8, background: "#F1F5F9" }}>
-        <div className="rounded-full h-full transition-all" style={{ width: `${(value / 5) * 100}%`, background: "linear-gradient(90deg, #FF6B35, #FF8C42)" }} />
+      <span style={{ fontSize: 13, color: "#8B9E94", width: 100, flexShrink: 0 }}>{label}</span>
+      <div className="flex-1 rounded-full overflow-hidden" style={{ height: 8, background: "#F4E9D8" }}>
+        <div className="rounded-full h-full transition-all" style={{ width: `${(value / 5) * 100}%`, background: "linear-gradient(90deg, #C96F52, #D97A5E)" }} />
       </div>
-      <span style={{ fontSize: 13, fontWeight: 700, color: "#374151", width: 28 }}>{value.toFixed(1)}</span>
+      <span style={{ fontSize: 13, fontWeight: 700, color: "#2C4F3E", width: 28 }}>{value.toFixed(1)}</span>
     </div>
   );
 }
@@ -44,16 +44,16 @@ export function Reviews() {
       {/* Header */}
       <div
         className="flex items-center gap-4 px-10 py-5"
-        style={{ borderBottom: "1px solid var(--border)", background: "#fff" }}
+        style={{ borderBottom: "1px solid var(--border)", background: "#FCFAF5" }}
       >
-        <button onClick={() => router.push(-1)} className="rounded-xl p-2.5 flex items-center gap-2" style={{ background: "#F1F5F9", fontSize: 14, fontWeight: 600, color: "#374151" }}>
+        <button onClick={() => router.push(-1)} className="rounded-xl p-2.5 flex items-center gap-2" style={{ background: "#F4E9D8", fontSize: 14, fontWeight: 600, color: "#2C4F3E" }}>
           <ArrowLeft size={16} />
         </button>
         <div>
-          <h1 style={{ fontSize: 22, fontWeight: 800, color: "#111827" }}>Reviews for {lf.name}</h1>
-          <p style={{ fontSize: 13, color: "#6B7280" }}>{lf.reviewCount} verified reviews · {lf.city}</p>
+          <h1 style={{ fontSize: 22, fontWeight: 800, color: "#1A3B2B" }}>Reviews for {lf.name}</h1>
+          <p style={{ fontSize: 13, color: "#8B9E94" }}>{lf.reviewCount} verified reviews · {lf.city}</p>
         </div>
-        <button className="ml-auto rounded-2xl px-5 py-3" style={{ background: "#FF6B35", color: "#fff", fontSize: 14, fontWeight: 700 }}>
+        <button className="ml-auto rounded-2xl px-5 py-3" style={{ background: "#C96F52", color: "#FCFAF5", fontSize: 14, fontWeight: 700 }}>
           Rate & Review
         </button>
       </div>
@@ -63,17 +63,17 @@ export function Reviews() {
         {/* ── Left: summary ── */}
         <div className="flex flex-col gap-5">
           {/* Overall score */}
-          <div className="rounded-3xl p-7" style={{ background: "linear-gradient(135deg, #FFF3EE, #FFFBEB)", border: "1px solid #FFD6C2" }}>
+          <div className="rounded-3xl p-7" style={{ background: "linear-gradient(135deg, #FCFAF53EE, #FCFAF5BEB)", border: "1px solid #FFD6C2" }}>
             <div className="flex items-center gap-4 mb-5">
-              <div style={{ fontSize: 72, fontWeight: 800, color: "#111827", lineHeight: 1 }}>{lf.rating}</div>
+              <div style={{ fontSize: 72, fontWeight: 800, color: "#1A3B2B", lineHeight: 1 }}>{lf.rating}</div>
               <div>
                 <div className="flex mb-1">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={20} color="#FF6B35" fill={i < Math.floor(lf.rating) ? "#FF6B35" : "none"} />
+                    <Star key={i} size={20} color="#C96F52" fill={i < Math.floor(lf.rating) ? "#C96F52" : "none"} />
                   ))}
                 </div>
-                <div style={{ fontSize: 14, color: "#6B7280" }}>out of 5</div>
-                <div style={{ fontSize: 13, color: "#6B7280", marginTop: 2 }}>{lf.reviewCount} total reviews</div>
+                <div style={{ fontSize: 14, color: "#8B9E94" }}>out of 5</div>
+                <div style={{ fontSize: 13, color: "#8B9E94", marginTop: 2 }}>{lf.reviewCount} total reviews</div>
               </div>
             </div>
             <div className="flex flex-col gap-3">
@@ -86,19 +86,19 @@ export function Reviews() {
           </div>
 
           {/* Traveler breakdown */}
-          <div className="rounded-2xl p-5" style={{ background: "#fff", border: "1px solid var(--border)" }}>
-            <h3 style={{ fontSize: 15, fontWeight: 800, color: "#111827", marginBottom: 14 }}>Traveler Types</h3>
+          <div className="rounded-2xl p-5" style={{ background: "#FCFAF5", border: "1px solid var(--border)" }}>
+            <h3 style={{ fontSize: 15, fontWeight: 800, color: "#1A3B2B", marginBottom: 14 }}>Traveler Types</h3>
             {[
-              { label: "Solo Travelers", pct: 52, color: "#FF6B35" },
-              { label: "Couples", pct: 28, color: "#0FB8B0" },
-              { label: "Groups", pct: 20, color: "#8B5CF6" },
+              { label: "Solo Travelers", pct: 52, color: "#C96F52" },
+              { label: "Couples", pct: 28, color: "#C96F52" },
+              { label: "Groups", pct: 20, color: "#C96F52" },
             ].map((t) => (
               <div key={t.label} className="mb-4">
                 <div className="flex justify-between mb-1.5">
-                  <span style={{ fontSize: 13, color: "#374151" }}>{t.label}</span>
+                  <span style={{ fontSize: 13, color: "#2C4F3E" }}>{t.label}</span>
                   <span style={{ fontSize: 13, fontWeight: 700, color: t.color }}>{t.pct}%</span>
                 </div>
-                <div className="rounded-full" style={{ height: 6, background: "#F1F5F9" }}>
+                <div className="rounded-full" style={{ height: 6, background: "#F4E9D8" }}>
                   <div className="rounded-full h-full" style={{ width: `${t.pct}%`, background: t.color }} />
                 </div>
               </div>
@@ -108,8 +108,8 @@ export function Reviews() {
           {/* Experience photos */}
           <div>
             <div className="flex items-center gap-2 mb-3">
-              <Camera size={16} color="#374151" />
-              <h3 style={{ fontSize: 15, fontWeight: 800, color: "#111827" }}>Experience Photos</h3>
+              <Camera size={16} color="#2C4F3E" />
+              <h3 style={{ fontSize: 15, fontWeight: 800, color: "#1A3B2B" }}>Experience Photos</h3>
             </div>
             <div className="grid gap-2" style={{ gridTemplateColumns: "1fr 1fr" }}>
               {EXPERIENCE_PHOTOS.map((src, i) => (
@@ -127,7 +127,7 @@ export function Reviews() {
 
         {/* ── Right: reviews ── */}
         <div>
-          <h2 style={{ fontSize: 18, fontWeight: 800, color: "#111827", marginBottom: 16 }}>
+          <h2 style={{ fontSize: 18, fontWeight: 800, color: "#1A3B2B", marginBottom: 16 }}>
             All Reviews ({lf.reviewCount})
           </h2>
 
@@ -136,32 +136,32 @@ export function Reviews() {
               <div
                 key={r.id}
                 className="rounded-3xl p-6 transition-all hover:-translate-y-0.5 hover:shadow-md"
-                style={{ background: "#fff", border: "1px solid var(--border)" }}
+                style={{ background: "#FCFAF5", border: "1px solid var(--border)" }}
               >
                 <div className="flex items-start gap-4 mb-4">
                   <img src={r.avatar} alt={r.author} className="rounded-2xl object-cover flex-shrink-0" style={{ width: 52, height: 52 }} />
                   <div className="flex-1">
                     <div className="flex items-start justify-between">
                       <div>
-                        <div style={{ fontSize: 16, fontWeight: 700, color: "#111827" }}>{r.author}</div>
-                        <div style={{ fontSize: 12, color: "#9CA3AF" }}>{r.date} · {r.tripType}</div>
+                        <div style={{ fontSize: 16, fontWeight: 700, color: "#1A3B2B" }}>{r.author}</div>
+                        <div style={{ fontSize: 12, color: "#8B9E94" }}>{r.date} · {r.tripType}</div>
                       </div>
                       <div className="flex">
                         {[...Array(5)].map((_, i) => (
-                          <Star key={i} size={16} color="#FF6B35" fill={i < r.rating ? "#FF6B35" : "none"} />
+                          <Star key={i} size={16} color="#C96F52" fill={i < r.rating ? "#C96F52" : "none"} />
                         ))}
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <p style={{ fontSize: 15, color: "#374151", lineHeight: 1.8 }}>"{r.comment}"</p>
+                <p style={{ fontSize: 15, color: "#2C4F3E", lineHeight: 1.8 }}>"{r.comment}"</p>
 
-                <div className="flex items-center gap-2 mt-4 pt-4" style={{ borderTop: "1px solid #F1F5F9" }}>
-                  <button className="flex items-center gap-1.5 rounded-xl px-3 py-1.5" style={{ background: "#F1F5F9", fontSize: 12, fontWeight: 600, color: "#374151" }}>
+                <div className="flex items-center gap-2 mt-4 pt-4" style={{ borderTop: "1px solid #F4E9D8" }}>
+                  <button className="flex items-center gap-1.5 rounded-xl px-3 py-1.5" style={{ background: "#F4E9D8", fontSize: 12, fontWeight: 600, color: "#2C4F3E" }}>
                     <ThumbsUp size={13} /> Helpful ({r.helpful})
                   </button>
-                  <span style={{ fontSize: 12, color: "#9CA3AF", marginLeft: "auto" }}>Verified booking</span>
+                  <span style={{ fontSize: 12, color: "#8B9E94", marginLeft: "auto" }}>Verified booking</span>
                 </div>
               </div>
             ))}

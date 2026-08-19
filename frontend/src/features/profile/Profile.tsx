@@ -33,35 +33,35 @@ export function Profile() {
           <button
             onClick={() => router.push(-1)}
             className="absolute top-6 left-6 rounded-full flex items-center justify-center gap-2 px-4 py-2"
-            style={{ background: "rgba(255,255,255,0.9)", fontSize: 13, fontWeight: 600, color: "#374151" }}
+            style={{ background: "rgba(255,255,255,0.9)", fontSize: 13, fontWeight: 600, color: "#2C4F3E" }}
           >
             <ArrowLeft size={16} /> Back
           </button>
           <button className="absolute top-6 right-6 rounded-full flex items-center justify-center" style={{ width: 40, height: 40, background: "rgba(255,255,255,0.9)" }}>
-            <Heart size={18} color="#374151" />
+            <Heart size={18} color="#2C4F3E" />
           </button>
 
           {/* Profile card overlay */}
           <div className="absolute bottom-0 left-0 right-0 px-8 pb-0">
             <div
               className="rounded-t-3xl px-8 py-6 flex items-end gap-6"
-              style={{ background: "#fff" }}
+              style={{ background: "#FCFAF5" }}
             >
               <div className="relative flex-shrink-0" style={{ marginTop: -48 }}>
-                <img src={lf.avatar} alt={lf.name} className="rounded-3xl object-cover" style={{ width: 90, height: 90, border: "4px solid #fff" }} />
+                <img src={lf.avatar} alt={lf.name} className="rounded-3xl object-cover" style={{ width: 90, height: 90, border: "4px solid #FCFAF5" }} />
                 {lf.verified && (
-                  <div className="absolute rounded-full flex items-center justify-center" style={{ width: 26, height: 26, background: "#0FB8B0", bottom: -4, right: -4, border: "3px solid #fff" }}>
-                    <Shield size={13} color="#fff" />
+                  <div className="absolute rounded-full flex items-center justify-center" style={{ width: 26, height: 26, background: "#C96F52", bottom: -4, right: -4, border: "3px solid #FCFAF5" }}>
+                    <Shield size={13} color="#FCFAF5" />
                   </div>
                 )}
               </div>
               <div className="flex-1 pb-2">
                 <div className="flex items-start justify-between">
                   <div>
-                    <h1 style={{ fontSize: 24, fontWeight: 800, color: "#111827", letterSpacing: "-0.02em" }}>{lf.name}, {lf.age}</h1>
+                    <h1 style={{ fontSize: 24, fontWeight: 800, color: "#1A3B2B", letterSpacing: "-0.02em" }}>{lf.name}, {lf.age}</h1>
                     <div className="flex items-center gap-2 mt-1">
-                      <MapPin size={14} color="#6B7280" />
-                      <span style={{ fontSize: 14, color: "#6B7280" }}>{lf.city}, {lf.country}</span>
+                      <MapPin size={14} color="#8B9E94" />
+                      <span style={{ fontSize: 14, color: "#8B9E94" }}>{lf.city}, {lf.country}</span>
                       {lf.womenOnly && (
                         <span className="rounded-full px-3 py-1" style={{ fontSize: 11, fontWeight: 700, background: "#FDF2F8", color: "#EC4899" }}>
                           💜 Women-Only
@@ -70,9 +70,9 @@ export function Profile() {
                     </div>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Star size={18} color="#FF6B35" fill="#FF6B35" />
-                    <span style={{ fontSize: 22, fontWeight: 800, color: "#111827" }}>{lf.rating}</span>
-                    <span style={{ fontSize: 14, color: "#9CA3AF" }}>({lf.reviewCount} reviews)</span>
+                    <Star size={18} color="#C96F52" fill="#C96F52" />
+                    <span style={{ fontSize: 22, fontWeight: 800, color: "#1A3B2B" }}>{lf.rating}</span>
+                    <span style={{ fontSize: 14, color: "#8B9E94" }}>({lf.reviewCount} reviews)</span>
                   </div>
                 </div>
               </div>
@@ -92,22 +92,22 @@ export function Profile() {
             ].map((s) => (
               <div key={s.label} className="rounded-2xl p-4 text-center" style={{ background: "#F8F9FE", border: "1px solid var(--border)" }}>
                 <div style={{ fontSize: 20 }}>{s.icon}</div>
-                <div style={{ fontSize: 20, fontWeight: 800, color: "#111827", marginTop: 4 }}>{s.value}</div>
-                <div style={{ fontSize: 11, color: "#6B7280", marginTop: 2 }}>{s.label}</div>
+                <div style={{ fontSize: 20, fontWeight: 800, color: "#1A3B2B", marginTop: 4 }}>{s.value}</div>
+                <div style={{ fontSize: 11, color: "#8B9E94", marginTop: 2 }}>{s.label}</div>
               </div>
             ))}
           </div>
 
           {/* About */}
           <div>
-            <h3 style={{ fontSize: 16, fontWeight: 800, color: "#111827", marginBottom: 10 }}>About {lf.name.split(" ")[0]}</h3>
-            <p style={{ fontSize: 15, color: "#374151", lineHeight: 1.8 }}>{lf.bio}</p>
+            <h3 style={{ fontSize: 16, fontWeight: 800, color: "#1A3B2B", marginBottom: 10 }}>About {lf.name.split(" ")[0]}</h3>
+            <p style={{ fontSize: 15, color: "#2C4F3E", lineHeight: 1.8 }}>{lf.bio}</p>
           </div>
 
           {/* Languages + Interests side by side */}
           <div className="grid grid-cols-2 gap-6">
             <div>
-              <h3 style={{ fontSize: 15, fontWeight: 800, color: "#111827", marginBottom: 10 }}>
+              <h3 style={{ fontSize: 15, fontWeight: 800, color: "#1A3B2B", marginBottom: 10 }}>
                 <Globe size={15} className="inline mr-2" />Languages
               </h3>
               <div className="flex gap-2 flex-wrap">
@@ -119,10 +119,10 @@ export function Profile() {
               </div>
             </div>
             <div>
-              <h3 style={{ fontSize: 15, fontWeight: 800, color: "#111827", marginBottom: 10 }}>Expertise</h3>
+              <h3 style={{ fontSize: 15, fontWeight: 800, color: "#1A3B2B", marginBottom: 10 }}>Expertise</h3>
               <div className="flex gap-2 flex-wrap">
                 {lf.interests.map((interest) => (
-                  <span key={interest} className="rounded-full px-4 py-2" style={{ fontSize: 13, background: "#FFF3EE", color: "#FF6B35", fontWeight: 600, border: "1px solid #FFD6C2" }}>
+                  <span key={interest} className="rounded-full px-4 py-2" style={{ fontSize: 13, background: "#FCFAF53EE", color: "#C96F52", fontWeight: 600, border: "1px solid #FFD6C2" }}>
                     {interest}
                   </span>
                 ))}
@@ -134,25 +134,25 @@ export function Profile() {
           {reviews.length > 0 && (
             <div>
               <div className="flex items-center justify-between mb-4">
-                <h3 style={{ fontSize: 16, fontWeight: 800, color: "#111827" }}>Recent Reviews</h3>
-                <button onClick={() => router.push(`/app/reviews/${lf.id}`)} style={{ fontSize: 13, fontWeight: 600, color: "#FF6B35" }}>
+                <h3 style={{ fontSize: 16, fontWeight: 800, color: "#1A3B2B" }}>Recent Reviews</h3>
+                <button onClick={() => router.push(`/app/reviews/${lf.id}`)} style={{ fontSize: 13, fontWeight: 600, color: "#C96F52" }}>
                   See all {lf.reviewCount} →
                 </button>
               </div>
               <div className="grid grid-cols-2 gap-4">
                 {reviews.map((r) => (
-                  <div key={r.id} className="rounded-2xl p-5" style={{ background: "#FAFAF8", border: "1px solid var(--border)" }}>
+                  <div key={r.id} className="rounded-2xl p-5" style={{ background: "#F4E9D8", border: "1px solid var(--border)" }}>
                     <div className="flex items-center gap-3 mb-3">
                       <img src={r.avatar} alt={r.author} className="rounded-full object-cover" style={{ width: 40, height: 40 }} />
                       <div className="flex-1">
-                        <div style={{ fontSize: 14, fontWeight: 700, color: "#111827" }}>{r.author}</div>
-                        <div style={{ fontSize: 11, color: "#9CA3AF" }}>{r.date} · {r.tripType}</div>
+                        <div style={{ fontSize: 14, fontWeight: 700, color: "#1A3B2B" }}>{r.author}</div>
+                        <div style={{ fontSize: 11, color: "#8B9E94" }}>{r.date} · {r.tripType}</div>
                       </div>
                       <div className="flex">
-                        {[...Array(r.rating)].map((_, i) => <span key={i} style={{ color: "#FF6B35" }}>★</span>)}
+                        {[...Array(r.rating)].map((_, i) => <span key={i} style={{ color: "#C96F52" }}>★</span>)}
                       </div>
                     </div>
-                    <p style={{ fontSize: 13, color: "#374151", lineHeight: 1.7 }}>"{r.comment}"</p>
+                    <p style={{ fontSize: 13, color: "#2C4F3E", lineHeight: 1.7 }}>"{r.comment}"</p>
                   </div>
                 ))}
               </div>
@@ -164,27 +164,27 @@ export function Profile() {
       {/* ── Right panel: book ── */}
       <div
         className="flex-shrink-0 flex flex-col overflow-y-auto"
-        style={{ width: 340, borderLeft: "1px solid var(--border)", background: "#fff", scrollbarWidth: "none" }}
+        style={{ width: 340, borderLeft: "1px solid var(--border)", background: "#FCFAF5", scrollbarWidth: "none" }}
       >
         <div className="px-6 py-6 flex-1">
           {/* Price */}
           <div className="flex items-baseline gap-2 mb-5">
-            <span style={{ fontSize: 32, fontWeight: 800, color: "#111827" }}>${lf.hourlyRate}</span>
-            <span style={{ fontSize: 15, color: "#6B7280" }}>/ hour</span>
+            <span style={{ fontSize: 32, fontWeight: 800, color: "#1A3B2B" }}>${lf.hourlyRate}</span>
+            <span style={{ fontSize: 15, color: "#8B9E94" }}>/ hour</span>
           </div>
 
           {/* Availability Calendar */}
           <div className="mb-5">
             <div className="flex items-center justify-between mb-3">
-              <span style={{ fontSize: 14, fontWeight: 700, color: "#111827" }}>June 2025</span>
+              <span style={{ fontSize: 14, fontWeight: 700, color: "#1A3B2B" }}>June 2025</span>
               <div className="flex gap-1">
-                <button className="rounded-lg p-1.5" style={{ background: "#F1F5F9" }}><ChevronLeft size={14} /></button>
-                <button className="rounded-lg p-1.5" style={{ background: "#F1F5F9" }}><ChevronRight size={14} /></button>
+                <button className="rounded-lg p-1.5" style={{ background: "#F4E9D8" }}><ChevronLeft size={14} /></button>
+                <button className="rounded-lg p-1.5" style={{ background: "#F4E9D8" }}><ChevronRight size={14} /></button>
               </div>
             </div>
             <div className="grid grid-cols-7 gap-1">
               {DAYS.map((d) => (
-                <div key={d} className="text-center" style={{ fontSize: 10, fontWeight: 600, color: "#9CA3AF", paddingBottom: 4 }}>{d}</div>
+                <div key={d} className="text-center" style={{ fontSize: 10, fontWeight: 600, color: "#8B9E94", paddingBottom: 4 }}>{d}</div>
               ))}
               {[null, null, null].map((_, i) => <div key={`e${i}`} />)}
               {JUNE_DATES.map(({ day, avail }) => (
@@ -194,8 +194,8 @@ export function Profile() {
                   className="rounded-xl py-1.5 text-center transition-all"
                   style={{
                     fontSize: 12, fontWeight: 600,
-                    background: avail ? "#FFF3EE" : "transparent",
-                    color: avail ? "#FF6B35" : "#D1D5DB",
+                    background: avail ? "#FCFAF53EE" : "transparent",
+                    color: avail ? "#C96F52" : "#8B9E94",
                     border: avail ? "1px solid #FFD6C2" : "1px solid transparent",
                   }}
                 >
@@ -212,9 +212,9 @@ export function Profile() {
               { icon: Shield, text: "ID Verified & Background Checked" },
               { icon: Globe, text: lf.languages.join(" · ") },
             ].map(({ icon: Icon, text }) => (
-              <div key={text} className="flex items-center gap-3 py-2" style={{ borderBottom: "1px solid #F1F5F9" }}>
-                <Icon size={15} color="#0FB8B0" />
-                <span style={{ fontSize: 13, color: "#374151" }}>{text}</span>
+              <div key={text} className="flex items-center gap-3 py-2" style={{ borderBottom: "1px solid #F4E9D8" }}>
+                <Icon size={15} color="#C96F52" />
+                <span style={{ fontSize: 13, color: "#2C4F3E" }}>{text}</span>
               </div>
             ))}
           </div>
@@ -225,18 +225,18 @@ export function Profile() {
           <button
             onClick={() => router.push(`/app/booking/${lf.id}`)}
             className="w-full rounded-2xl py-4 transition-all hover:shadow-lg"
-            style={{ background: "#FF6B35", color: "#fff", fontSize: 16, fontWeight: 700 }}
+            style={{ background: "#C96F52", color: "#FCFAF5", fontSize: 16, fontWeight: 700 }}
           >
             Book Now
           </button>
           <button
             className="w-full rounded-2xl py-4 flex items-center justify-center gap-2"
-            style={{ background: "#F1F5F9", color: "#374151", fontSize: 15, fontWeight: 600 }}
+            style={{ background: "#F4E9D8", color: "#2C4F3E", fontSize: 15, fontWeight: 600 }}
           >
             <MessageCircle size={18} />
             Send a Message
           </button>
-          <p className="text-center" style={{ fontSize: 12, color: "#9CA3AF" }}>Free cancellation · 24hr in advance</p>
+          <p className="text-center" style={{ fontSize: 12, color: "#8B9E94" }}>Free cancellation · 24hr in advance</p>
         </div>
       </div>
     </div>
